@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "odin build",
+            "type": "shell",
+            "problemMatcher": "$msCompile",
+            "command": "odin",
+            "args": [
+                "build",
+                "${workspaceFolder}/src",
+                // "-vet",
+                "-warnings-as-errors",
+                "-debug",
+                "-out:out/gluon.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "odin test",
+            "type": "shell",
+            "problemMatcher": "$msCompile",
+            "command": "odin",
+            "args": [
+                "test",
+                "${workspaceFolder}/src",
+                "-debug",
+                "-out:out/gluon_tests.exe"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
